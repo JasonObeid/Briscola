@@ -1,0 +1,120 @@
+.interactable {
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.disabled > .card {
+  filter: grayscale(50%);
+}
+
+.cardRear {
+  width: 110px;
+  height: fit-content;
+  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0, 0.3));
+}
+
+.cardWrapper {
+  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 5px;
+  background-color: white;
+}
+
+.interactable.cardWrapper:hover {
+  box-shadow: 1px 1px 6px rgb(0, 0, 0, 0.5);
+  transition: box-shadow 100ms ease-in-out;
+}
+
+.card {
+  width: 100px;
+  height: fit-content;
+}
+
+.briscola {
+  width: 65px;
+  height: fit-content;
+}
+
+.briscolaWrapper {
+  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 5px;
+  background-color: white;
+  position: relative;
+  top: 32px;
+  right: -16px;
+  rotate: 270deg;
+  flex-shrink: 0;
+}
+
+.deck {
+  width: 90px;
+  height: fit-content;
+  z-index: 2;
+}
+
+.pile {
+  width: 170px;
+  height: fit-content;
+}
+
+@keyframes player-won {
+  0% {
+    box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0px 0px 3px rgba(115, 255, 0, 0.7),
+      0px 0px 5px rgba(115, 255, 0, 0.6), 0px 0px 7px rgba(115, 255, 0, 0.5),
+      0px 0px 9px rgba(115, 255, 0, 0.4);
+  }
+}
+
+@keyframes opponent-won {
+  0% {
+    box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0px 0px 3px rgba(196, 11, 11, 0.7),
+      0px 0px 5px rgba(196, 11, 11, 0.6), 0px 0px 7px rgba(196, 11, 11, 0.5),
+      0px 0px 9px rgba(196, 11, 11, 0.4);
+  }
+}
+
+.player-won {
+  animation-name: player-won;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  transition: ease-in-out;
+}
+
+.opponent-won {
+  animation-name: opponent-won;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  transition: ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .deck {
+    position: relative;
+
+    width: 125px;
+
+    rotate: 90deg;
+  }
+
+  .briscola {
+    width: 100px;
+    height: fit-content;
+  }
+
+  .briscolaWrapper {
+    rotate: 0deg;
+    position: unset;
+  }
+}
