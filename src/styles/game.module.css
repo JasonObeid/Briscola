@@ -73,10 +73,6 @@
     overflow-x: unset;
   }
 
-  .Deck {
-    flex-direction: row;
-  }
-
   .PlayerPile {
     grid-area: PlayerPile;
 

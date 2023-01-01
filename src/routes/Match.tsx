@@ -8,10 +8,6 @@ import { getCredentials, storeCredentials } from "../constants/utils";
 const guestCredentials = generateCredentials();
 const guestPlayerID = "1";
 
-export type MatchProps = {
-  matchID: string;
-  playerID: string;
-};
 export function Match() {
   const [params] = useSearchParams();
   const location = useLocation();

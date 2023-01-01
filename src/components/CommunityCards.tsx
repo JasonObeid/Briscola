@@ -5,6 +5,7 @@ export type CommunityCardsProps = {
 };
 
 import deck from "../../images/deck.webp";
+import cardRear from "../../images/cardRear.webp";
 import { cardsMap } from "../constants/cards";
 
 export function CommunityCards({ G }: CommunityCardsProps) {
@@ -19,14 +20,20 @@ export function CommunityCards({ G }: CommunityCardsProps) {
 
   return (
     <>
-      <div className={`${styles.cardWrapper} ${styles.briscolaWrapper}`}>
-        <Briscola className={`${styles.card} ${styles.briscola}`} />
+      <div className="flex justify-center items-center">
+        <div className={`${styles.cardWrapper} ${styles.briscolaWrapper}`}>
+          <Briscola className={`${styles.card} ${styles.briscola}`} />
+        </div>
+        <img
+          src={remainingCards > 1 ? deck : cardRear}
+          alt="backside"
+          className={styles.deck}
+        />
       </div>
-      <img
-        src={remainingCards > 0 ? deck : ""}
-        alt="backside"
-        className={styles.deck}
-      />
+      <p className="max-sm:hidden ml-auto mr-4">{`${remainingCards} card${
+        remainingCards > 1 ? "s" : ""
+      } remaining`}</p>
+      <p className="sm:hidden ml-auto">{`${remainingCards}`}</p>
     </>
   );
 }
